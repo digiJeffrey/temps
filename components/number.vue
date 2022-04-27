@@ -31,12 +31,6 @@ loader
 <script>
 export default {
   props: ['floor', 'recentFloor'],
-  data() {
-    return {
-      // num,
-      name: '2',
-    }
-  },
   watch: {
     recentFloor: function (val) {
       const gsap = this.$gsap
@@ -66,7 +60,7 @@ export default {
     border: 1px solid red;
     display: flex;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     /* temp for test */
     width: 96px;
@@ -81,6 +75,7 @@ export default {
 
 .floor {
   padding: 18px 0;
+  /* border: 1px solid; */
   svg {
     color: white;
   }

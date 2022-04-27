@@ -27,7 +27,7 @@ export default {}
 }
 
 .cloud1 {
-  /* background: url('../assets/shutterstock_429042058 1.png'); */
+  background: url('../assets/shutterstock_1725273034 2.png');
   background-repeat: repeat-x;
   width: 500%;
   height: 100%;
