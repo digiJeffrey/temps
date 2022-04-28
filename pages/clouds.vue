@@ -2,6 +2,7 @@
   <div>
     <div class="clouds-outer">
       <div class="cloud1"></div>
+      <div class="cloud2"></div>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@ export default {}
   height: 100vh;
   background-color: skyblue;
   overflow: hidden;
+  position: relative;
 }
 
 @keyframes slide {
@@ -27,11 +29,22 @@ export default {}
   }
 }
 
+
 .cloud1 {
   background: url('../assets/cloud1.png');
   background-repeat: repeat-x;
   width: 500%;
   height: 100%;
-  animation: slide 20s linear infinite;
+  animation: slide 300s linear infinite;
+}
+
+.cloud2 {
+  background: url('../assets/cloud2.png');
+  background-repeat: repeat-x;
+  width: 500%;
+  height: 100%;
+  animation: slide 400s linear infinite;
+  position: absolute;
+  top: 50%;
 }
 </style>
