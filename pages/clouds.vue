@@ -15,7 +15,7 @@ export default {}
 .clouds-outer {
   width: 100vw;
   height: 100vh;
-  background-color: skyblue;
+  background-color: linear-gradient(180deg, #C0D7EC 0%, #D3E3F2 18.92%, #E7EFF4 62.5%, #F6F7F8 100%);;
   overflow: hidden;
   position: relative;
 }
