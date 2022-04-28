@@ -2,24 +2,17 @@
 loader
 <template>
   <section class="floor-number">
-    <div class="floors">
-      <div class="floors-list">
-        <div class="floor-carrier" v-for="num in floor" :key="num">
-          <div
-            v-if="num < 9"
-            v-html="require(`../assets/nums/${num + 1}.svg?raw`)"
-            class="floor"
-          />
-          <div v-else class="floor double-digits">
-            <div
-              v-html="require(`../assets/nums/${String(num + 1)[0]}.svg?raw`)"
-            />
-            <div
-              v-html="require(`../assets/nums/${String(num + 1)[1]}.svg?raw`)"
-            />
+    <div class="floors-frame">
+      <ul class="floors-list">
+        <li class="floor-carrier" v-for="num in floor" :key="num ">
+          <digit v-if="num<9" :number="num + 1"></digit>
+          <div v-else class="double-digits">
+            <digit :number="String(num + 1)[0]"></digit>
+            <digit :number="String(num + 1)[1]"></digit>
           </div>
-        </div>
-      </div>
+        </li>
+
+      </ul>
     </div>
 
     <div class="sign">
@@ -29,7 +22,11 @@ loader
 </template>
 
 <script>
+import digit from './digit.vue'
+
+
 export default {
+  components: { digit },
   props: ['floor', 'recentFloor'],
   watch: {
     recentFloor: function (val) {
@@ -37,7 +34,7 @@ export default {
       gsap.to('.floors-list', {
         duration: 1,
         ease: 'circ.out',
-        bottom: 0 - 127 * (val - 1),
+        bottom: 0 - 236 * (val - 1),
       })
     },
   },
@@ -47,7 +44,6 @@ export default {
 <style lang="scss" scoped>
 .floor-number {
   width: 450px;
-  border: 1px solid blue;
   position: absolute;
   z-index: 5;
   top: 50%;
@@ -55,17 +51,25 @@ export default {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  .floors {
-    border: 1px solid red;
+  .floors-frame {
     display: flex;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden; 
+    width: 247px;
+    height: 236px;
 
     /* temp for test */
-    width: 96px;
-    height: 127px;
   }
+}
+
+.floor-carrier{
+  width: 247px;
+  height: 236px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .floors-list {
@@ -73,16 +77,11 @@ export default {
   bottom: 0;
 }
 
-.floor {
-  padding: 18px 0;
-  /* border: 1px solid; */
-  svg {
-    color: white;
-  }
-}
 
 .double-digits {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
 }
 
 .sign {

@@ -42,13 +42,13 @@ export default {
         gsap.to('.building', {
           duration: 1,
           ease: 'circ.out',
-          bottom: 0 - (h / 44) * num,
+          bottom: 0 - (h / 55) * num,
         })
       } else {
         gsap.to('.building', {
           duration: 1,
           ease: 'circ.out',
-          bottom: 0 - (h / 44) * (this.recentFloor - 1),
+          bottom: 0 - (h / 55) * (this.recentFloor - 1),
         })
       }
     },
@@ -74,7 +74,6 @@ export default {
   height: auto;
   position: absolute;
   bottom: 0;
-  opacity: 0.5;
 }
 
 ul {

@@ -14,6 +14,7 @@ export default {}
 .clouds-outer {
   width: 100vw;
   height: 100vh;
+  background-color: skyblue;
   overflow: hidden;
 }
 
@@ -27,7 +28,7 @@ export default {}
 }
 
 .cloud1 {
-  background: url('../assets/shutterstock_1725273034 2.png');
+  background: url('../assets/cloud1.png');
   background-repeat: repeat-x;
   width: 500%;
   height: 100%;
